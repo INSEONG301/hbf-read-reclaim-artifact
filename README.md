@@ -1,6 +1,6 @@
 # HBF Read-Reclaim Simulator
 
-An analytic simulator for **NAND read-disturb reclaim** on **High-Bandwidth
+An in-house simulator for **NAND read-disturb reclaim** on **High-Bandwidth
 Flash (HBF)** used as KV-cache / weight storage during LLM inference.
 
 When the KV cache (and optionally the model weights) are held on HBF, each
@@ -69,14 +69,13 @@ hbf_rr/
   plotting.py    # plotting helpers
 defaults.py      # DEFAULT_BASE config (4 KB page) + request-rate heuristic
 example.py       # minimal end-to-end example
-paper_lifetime_heatmap.py    # lifetime heatmap over (input x output) length
-paper_lifetime_triptych.py   # lifetime sensitivity (layers / bandwidth / KV-vs-weight)
-paper_tbt_slo.py             # SLO-sized-concurrency TBT (core)
-paper_tbt_slo_thr.py         # SLO TBT figure: ideal vs typical-SLC threshold
-write_lifetime/
-  paper_figs.py              # write-volume / lifetime helpers
-  paper_figs_total_v5.py     # (a) write overhead + (b) HBF lifetime figure
-  _bootstrap.py
+figures/
+  lifetime_heatmap.py        # lifetime heatmap over (input x output) length
+  lifetime_triptych.py       # lifetime sensitivity (layers / bandwidth / KV-vs-weight)
+  tbt_slo.py                 # SLO-sized-concurrency TBT (core, imported by tbt_slo_thr)
+  tbt_slo_thr.py             # SLO TBT figure: ideal vs typical-SLC threshold
+  write_lifetime.py          # (a) write overhead + (b) HBF lifetime figure
+  _common.py                 # write-volume / lifetime helpers
 run/             # one shell script per paper figure
   run_write_lifetime.sh
   run_tbt_slo.sh

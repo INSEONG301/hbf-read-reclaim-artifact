@@ -29,7 +29,7 @@ OUTPUTS = [2_048, 32_768, 131_072, 524_288]          # 4 x-axis points
 TARGET_YEARS = 5.0
 YMAX = 8.0
 
-LAYERS = [112, 164, 218, 332]                       # (a); bw held at 1.6 TB/s
+LAYERS = [112, 162, 218, 332]                       # (a); bw held at 1.6 TB/s
 BANDWIDTHS = [0.8e12, 1.6e12, 2.4e12, 3.2e12]        # (b); layers held at 162
 BW_FIXED = 1.6e12
 LAYERS_FIXED = 162
